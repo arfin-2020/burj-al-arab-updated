@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../../App.css';
 import { useAuth } from '../Context/AuthContext';
 const Login = () => {
@@ -11,15 +11,16 @@ const Login = () => {
 
     const {signInWithGooogle} = useAuth();
     const location = useLocation();
-    // const navigate = useNavigate()
-    console.log(location);
+    const navigate = useNavigate()
+    const redirect_uri = location.state?.from || "/";
+    console.log('from login----------',location.state?.from);
     // const redirect_uri = location.state?.from || '/';
     //     console.log('came from', redirect_uri)
-    const googleSignIn = () =>{
+    const googleSignIn = async() =>{
         try{
-            signInWithGooogle()
-            // navigate(`${redirect_url}`);
-            // navigate(`${location}`, { state: '' });
+          await  signInWithGooogle()
+            navigate(redirect_uri, { replace: true });
+           
         }catch(error){
             console.log(error)
         }

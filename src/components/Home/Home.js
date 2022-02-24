@@ -7,6 +7,7 @@ const Home = () => {
         margin: '40px',
         justifyContent: 'space-between'
     }
+   
     const rooms = [
         {
             title: 'Standard Single Room',
