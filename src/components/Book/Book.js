@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Book = () => {
     const {bedType} = useParams()
-    const location = useLocation()
-    console.log(location)
+  
     return (
        
              <div style={{textAlign: 'center'}}>

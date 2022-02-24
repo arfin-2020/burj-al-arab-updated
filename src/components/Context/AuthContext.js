@@ -26,7 +26,7 @@ const AuthProvider = ({children}) => {
 
     
     const signInWithGooogle = () =>{
-        signInWithPopup(auth,GoogleProvider)
+       return signInWithPopup(auth,GoogleProvider)
         .then((result=>{
             // console.log(result.user)
             const {displayName, email} = result.user;
