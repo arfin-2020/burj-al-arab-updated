@@ -13,9 +13,8 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate()
     const redirect_uri = location.state?.from?.pathname || "/";
-    console.log('from login----------',redirect_uri);
-    // const redirect_uri = location.state?.from || '/';
-    //     console.log('came from', redirect_uri)
+    // console.log('from login----------',redirect_uri);
+   
     const googleSignIn = async() =>{
         try{
           await signInWithGooogle()
